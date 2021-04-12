@@ -1,3 +1,4 @@
+import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import { Component, Input } from "@angular/core";
 
 @Component({
@@ -6,5 +7,8 @@ import { Component, Input } from "@angular/core";
   styles: ["h1 { color: black; }", "h1.red { color: red; }"]
 })
 export class HelloComponent {
-  @Input() isRed = false;
+  private _isRed = false;
+  @Input() set isRed(arg: any) {
+    this._isRed = coerceBooleanProperty(arg);
+  }
 }
