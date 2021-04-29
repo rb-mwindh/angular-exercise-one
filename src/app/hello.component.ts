@@ -8,8 +8,6 @@ import { Component, Input } from "@angular/core";
 export class HelloComponent {
   isRed = false;
   @Input("isRed") set _isRed(arg: any) {
-    console.log(arg);
     this.isRed = !arg || arg === "true";
-    console.log("this.isRed: ", this.isRed);
   }
 }
