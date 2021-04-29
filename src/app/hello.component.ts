@@ -11,4 +11,7 @@ export class HelloComponent {
   @Input() set isRed(arg: any) {
     this._isRed = coerceBooleanProperty(arg);
   }
+  get isRed() {
+    return this._isRed;
+  }
 }
